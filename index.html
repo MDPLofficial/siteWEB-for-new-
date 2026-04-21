@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MDPL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body data-page="home">
+    <header id="header" class="header"></header>
+
+    <main>
+        <section id="hero" class="hero">
+            <div class="hero-title">
+                <h1>МДПЛ</h1>
+                <p style="font-size: 27px;">Цифрова держава спільноти</p>
+            </div>
+            <div class="hero-btns">
+                <button id="become-citizen-btn" class="become-citizen-btn">Стати громадянином</button>
+                <button id="join-btn" class="join-btn">
+                    <span>
+                        <svg style="color: rgba(51, 109, 221);" xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-discord" viewBox="0 0 16 16">
+                            <path d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612"/>
+                        </svg>
+                    </span>
+                    Приєднатися до Discord
+                </button>
+            </div>
+        </section>
+        <section id="fast-info" class="fast-info">
+            <div class="info-box">
+                <p>
+                    Громадяни<br> 
+                    <strong>27</strong>
+                </p>
+            </div>
+            <div class="info-box">
+                <p>Придумати!!!</p>
+            </div>
+            <div class="info-box">
+                <p>Придумати!!!</p>
+            </div>
+            <div class="info-box">
+                <p>Засновано 2018</p>
+            </div>
+        </section>
+        <section id="features" class="features">
+            <div class="info-box">
+                <svg></svg>
+                <h3>Уряд</h3>
+                <p>Наші міністри</p>
+            </div>
+            <div class="info-box">
+                <svg></svg>
+                <h3>Конституція</h3>
+                <p>Правила держави</p>
+            </div>
+            <div class="info-box">
+                <svg></svg>
+                <h3>Громадяни</h3>
+                <p>Члени спільноти</p>
+            </div>
+            <div class="info-box">
+                <svg></svg>
+                <h3>Проєкти</h3>
+                <p>Наші ініціативи</p>
+            </div>
+        </section>
+        <section id="application" class="application">
+            <div class="container">
+                <h3>Як стати громадянином</h3>
+                <ol class="steps-list">
+                    <li>Приєднайся до Discord</li>
+                    <li>Подай заявку</li>
+                    <li>Отримай роль</li>
+                </ol>
+                <button id="become-citizen-btn" class="become-citizen-btn">Подяти заявку</button>
+            </div>
+        </section>
+        <section id="last-news" class="last-news">
+            <div class="container">
+                <p>Останні новини</p>
+
+                <div class="news-grid">
+                    <div class="info-box">...</div>
+                    <div class="info-box">...</div>
+                    <div class="info-box">...</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- Modal -->
+    <div id="modal" class="modal" style="display:none;">
+        <div class="container">
+            <div class="modal-header">
+                <div class="modal-title">
+                    <h2>Стати громадянином</h2>
+                    <p>Подайте заявку на приєднання до МДПЛ</p>
+                </div>
+                <button id="close-btn" class="close-btn">X</button>
+            </div>
+            <form class="blank">
+                <label>
+                    Прізвище та Ім'я
+                    <input type="text" name="name" placeholder="Василь Клеменко">
+                </label>
+                <label>
+                    Дата народження
+                    <input type="date" name="date">
+                </label>
+                <label>
+                    Мета вступу до МДПЛ
+                    <textarea name="reason"></textarea>
+                </label>
+                <label>
+                    Ідеї та проєкти
+                    <textarea name="projects"></textarea>
+                </label>
+                <label>
+                    Бажана посада
+                    <input type="text" name="poste" placeholder="Наприклад: Громадянин, Міністр...">
+                </label>
+                <button id="close-btn" class="close-btn">Скасувати</button>
+                <button id="submit-btn" class="submit-btn">Подати заявку</button>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>

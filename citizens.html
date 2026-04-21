@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citizens</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body data-page="citizens">
+    <header id="header"></header>
+
+    <main>
+        <section class="citizens-page">
+
+            <div class="container">
+
+                <!-- Заголовок -->
+                <div class="page-header">
+                    <h1>Громадяни</h1>
+                    <p>Спільнота активних учасників цифрової держави.</p>
+                </div>
+
+                <!-- Статистика -->
+                <div class="stats">
+                    <div class="stat-box">
+                        <p>Всього громадян</p>
+                        <span id="total-count">0</span>
+                    </div>
+
+                    <div class="stat-box">
+                        <p>Онлайн зараз</p>
+                        <span id="online-count">0</span>
+                    </div>
+
+                    <div class="stat-box">
+                        <p>Нових за місяць</p>
+                        <span id="new-count">0</span>
+                    </div>
+
+                    <input type="text" id="search" placeholder="Пошук громадянина...">
+                </div>
+
+                <!-- Фільтри -->
+                <div class="filters">
+                    <button data-filter="all">Усі</button>
+                    <button data-filter="government">Уряд</button>
+                    <button data-filter="minister">Міністри</button>
+                    <button data-filter="active">Активні</button>
+                    <button data-filter="new">Нові</button>
+                </div>
+
+                <!-- СПИСОК -->
+                <div id="citizens-list" class="citizens-list"></div>
+
+                <div class="slogan">
+                    <p>"Кожен громадянин - це частина цифрової держави"</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>
