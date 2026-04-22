@@ -8,6 +8,6 @@ export function renderHeader() {
         <a href="constitution.html" data-link="constitution">Конституція</a>
         <a href="news.html" data-link="news">Новини</a>
     </nav>
-    <button id="become-citizen-btn" class="become-citizen-btn">Стати громадянином</button>
+    <button id="become-citizen-btn" class="btn become-citizen-btn">Стати громадянином</button>
   `;
 }

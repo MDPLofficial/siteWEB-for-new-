@@ -27,6 +27,10 @@ body{
     box-shadow: var(--shadow-lg);
 }
 
+main{
+  background-color: var(--bg-secondary);
+}
+
 section {
   margin-top: 0;
   margin-bottom: 0;
@@ -53,6 +57,22 @@ a{
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+}
+
+.btn{
+  padding: 5px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  background: var(--bg);
+  border-radius: 3px;
+  border: 1px solid var(--border);
+  box-shadow: 0 3px 5px rgba(0,0,0, 0.20);
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
 }
 
 
@@ -96,22 +116,18 @@ header nav a.active::after {
   background: var(--primary);
   color: white;
   border: none;
-  padding: 12px 25px;
+  padding: 15px 50px;
   border-radius: 8px;
-  cursor: pointer;
-  font-size: 16px;
   font-weight: 600;
-  transition: all 0.2s ease;
 }
 
 .become-citizen-btn:hover {
   background: #2563EB;
-  transform: translateY(-2px);
 }
 
 /* PAGE HOME */
 /* HERO */
-.hero{
+.hero-home{
     height: 300px;
     padding: 50px;
     display: flex;
@@ -140,18 +156,9 @@ header nav a.active::after {
 }
 
 .join-btn{
-    padding: 5px 20px;
     display: flex;
     align-items: center;
     gap: 5px;
-    font-size: 17px;
-    color: var(--text-secondary);
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 3px;
-    box-shadow: 0 3px 5px rgba(0,0,0, 0.20);
-    cursor: pointer;
-    transition: all 0.3s ease;
 }
 
 .join-btn:hover{
@@ -296,24 +303,6 @@ header nav a.active::after {
 }
 
 
-/* кнопка */
-
-.become-citizen-btn {
-  background: #3B82F6;
-  color: white;
-  border: none;
-  padding: 15px 50px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.become-citizen-btn:hover {
-  background: #2563EB;
-  transform: translateY(-2px);
-}
-
-
 /* ===================== */
 /* NEWS */
 /* ===================== */
@@ -364,4 +353,381 @@ header nav a.active::after {
 
 .last-news a:hover {
   text-decoration: underline;
+}
+
+/* ABOUT PAGE */
+
+.about-info{
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  padding-bottom: 40px;
+  border-bottom: 2px solid var(--border);
+}
+
+.history, .principles, .symbols-main{
+  width: 100%;
+  background: var(--bg);
+  box-shadow: var(--shadow-lg);
+  border-radius: 7px;
+}
+
+.container-symbols{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.symbols-head{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.symbols-main{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px 0;
+}
+
+.emblem{
+  padding-left: 20px;
+  border-left: 2px solid var(--border);
+}
+
+.slogan{
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  width: 100%;
+  background: var(--bg);
+  box-shadow: 0 5px 15px rgba(0,0,0, 0.20);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(241, 245, 254, 1) 38%);
+}
+
+.slogan p{
+  color: var(--text-main);
+}
+
+/* ===================== */
+/* CITIZENS PAGE */
+/* ===================== */
+
+/* HERO */
+
+.hero-citizens h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+
+/* ===================== */
+/* STATS */
+/* ===================== */
+
+.stats {
+  display: grid;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 15px;
+  gap: 20px;
+  margin-bottom: 30px;
+  align-items: center;
+}
+
+.stat-box {
+  border-left: 2px solid var(--border);
+  padding-left: 10px;
+}
+
+.stat-box p {
+  font-size: 13px;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.stat-box span {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+
+/* SEARCH */
+
+#search {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s;
+}
+
+#search:focus {
+  border-color: var(--primary);
+}
+
+
+/* ===================== */
+/* FILTERS */
+/* ===================== */
+
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.filters button {
+  padding: 8px 15px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.filters button:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.filters button.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+
+/* ===================== */
+/* CITIZENS LIST */
+/* ===================== */
+
+.citizens-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+
+/* CARD */
+
+.citizen-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.citizen-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+
+/* LEFT */
+
+.citizen-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.citizen-left h3 {
+  font-size: 15px;
+}
+
+.citizen-left p {
+  font-size: 12px;
+}
+
+
+/* RIGHT */
+
+.citizen-right {
+  text-align: right;
+}
+
+.role {
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  background: var(--bg-secondary);
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+/* різні ролі */
+
+.role.міністр {
+  background: rgba(59,130,246,0.1);
+  color: var(--primary);
+}
+
+.role.громадянин {
+  background: rgba(16,185,129,0.1);
+  color: var(--success);
+}
+
+/* ===================== */
+/* CONSTITUTION */
+/* ===================== */
+
+/* HERO */
+.hero-constitution h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.hero-constitution p {
+  font-size: 15px;
+  color: var(--text-secondary);
+}
+
+
+/* ===================== */
+/* CONTENTS (розділи) */
+/* ===================== */
+
+.contents-section {
+  margin-bottom: 30px;
+}
+
+.contents-section .container {
+  background: var(--bg); /* БІЛИЙ ФОН */
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.contents-section h3 {
+  margin-bottom: 15px;
+}
+
+/* GRID 2x3 */
+.contents {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+/* кнопки */
+.content-item {
+  padding: 14px;
+  border-radius: 10px;
+  border: 2px solid var(--border);
+  background: var(--bg);
+  cursor: pointer;
+  font-size: 14px;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.content-item span {
+  padding: 7px;
+  margin-right: 10px;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background:#e4e6eb;
+  border-radius: 5px;
+}
+
+/* hover */
+.content-item:hover{
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.content-item:hover span{
+  color: var(--primary);
+}
+
+
+/* active */
+.content-item.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+
+/* ===================== */
+/* LAWS (контент) */
+/* ===================== */
+
+.laws {
+  margin-bottom: 40px;
+}
+
+.laws .container {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 25px;
+  min-height: 200px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  transition: all 0.2s ease;
+}
+
+.laws h3 {
+  margin-bottom: 15px;
+}
+
+/* стаття */
+.law-article {
+  padding: 15px;
+  border-left: 3px solid var(--primary);
+  margin-bottom: 15px;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+}
+
+.law-article h4 {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: var(--primary);
+}
+
+.law-article p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+
+/* ===================== */
+/* EXTRA INFO */
+/* ===================== */
+
+.info-extra {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }

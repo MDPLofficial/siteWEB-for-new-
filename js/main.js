@@ -18,4 +18,12 @@ document.addEventListener("DOMContentLoaded", () => {
   if (page === "about") initAbout();
   if (page === "news") initNews();
   if (page === "constitution") initConstitution();
+
+  const links = document.querySelectorAll("nav a");
+
+  links.forEach(link => {
+    if (link.dataset.link === page) {
+      link.classList.add("active");
+    }
+  });
 });

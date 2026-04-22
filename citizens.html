@@ -11,55 +11,89 @@
     <header id="header"></header>
 
     <main>
-        <section class="citizens-page">
+        <div class="container">
+            <section class="citizens-page">
 
-            <div class="container">
+                <div class="container">
 
-                <!-- Заголовок -->
-                <div class="page-header">
-                    <h1>Громадяни</h1>
-                    <p>Спільнота активних учасників цифрової держави.</p>
-                </div>
-
-                <!-- Статистика -->
-                <div class="stats">
-                    <div class="stat-box">
-                        <p>Всього громадян</p>
-                        <span id="total-count">0</span>
+                    <!-- Заголовок -->
+                    <div class="hero-citizens">
+                        <h1>Громадяни</h1>
+                        <p>Спільнота активних учасників цифрової держави.</p>
                     </div>
 
-                    <div class="stat-box">
-                        <p>Онлайн зараз</p>
-                        <span id="online-count">0</span>
+                    <!-- Статистика -->
+                    <div class="stats">
+                        <div class="stat-box" style="border: none;">
+                            <p>Всього громадян</p>
+                            <span id="total-count">0</span>
+                        </div>
+
+                        <div class="stat-box">
+                            <p>Онлайн зараз</p>
+                            <span id="online-count">0</span>
+                        </div>
+
+                        <div class="stat-box">
+                            <p>Нових за місяць</p>
+                            <span id="new-count">0</span>
+                        </div>
+
+                        <input type="text" id="search" placeholder="Пошук громадянина...">
                     </div>
 
-                    <div class="stat-box">
-                        <p>Нових за місяць</p>
-                        <span id="new-count">0</span>
+                    <!-- Фільтри -->
+                    <div class="filters">
+                        <button data-filter="all">Усі</button>
+                        <button data-filter="government">Уряд</button>
+                        <button data-filter="minister">Міністри</button>
+                        <button data-filter="active">Активні</button>
+                        <button data-filter="new">Нові</button>
                     </div>
 
-                    <input type="text" id="search" placeholder="Пошук громадянина...">
-                </div>
+                    <!-- СПИСОК -->
+                    <div id="citizens-list" class="citizens-list">
+                    <!-- Example -->
+                        <div class="citizen-card">
+                            <div class="citizen-left">
+                                <div class="avatar">${citizen.name[0]}</div>
+                                <div>
+                                <h3>${citizen.name}</h3>
+                                <p>ID: #${citizen.id}</p>
+                                </div>
+                            </div>
+                            <div class="citizen-right">
+                                <span class="role ${citizen.role.toLowerCase()}">${c.role}</span>
+                                <p>${citizen.year}</p>
+                            </div>
+                        </div>
 
-                <!-- Фільтри -->
-                <div class="filters">
-                    <button data-filter="all">Усі</button>
-                    <button data-filter="government">Уряд</button>
-                    <button data-filter="minister">Міністри</button>
-                    <button data-filter="active">Активні</button>
-                    <button data-filter="new">Нові</button>
-                </div>
+                        <div class="citizen-card">
+                            <div class="citizen-left">
+                                <div class="avatar">${citizen.name[0]}</div>
+                                <div>
+                                <h3>${citizen.name}</h3>
+                                <p>ID: #${citizen.id}</p>
+                                </div>
+                            </div>
+                            <div class="citizen-right">
+                                <span class="role ${citizen.role.toLowerCase()}">${c.role}</span>
+                                <p>${citizen.year}</p>
+                            </div>
+                        </div>
 
-                <!-- СПИСОК -->
-                <div id="citizens-list" class="citizens-list"></div>
+                    </div>
 
-                <div class="slogan">
-                    <p>"Кожен громадянин - це частина цифрової держави"</p>
+                    <div class="slogan">
+                        <p>"Кожен громадянин - це частина цифрової держави"</p>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </main>
 
+
+    <div class="modal modal-citizen-card"></div>
 
     <script type="module" src="./js/main.js"></script>
 </body>
