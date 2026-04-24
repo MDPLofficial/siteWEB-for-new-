@@ -55,7 +55,6 @@ a{
 }
 
 .container {
-  max-width: 100%;
   min-width: 320px;
   margin: 0 auto;
   padding: 20px;
@@ -75,6 +74,13 @@ a{
 
 .btn:hover {
   transform: translateY(-2px);
+}
+
+.card {
+  background: var(--bg);
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
 }
 
 /* MODAL WINDOW */
@@ -101,6 +107,7 @@ a{
 }
 
 .modal{
+  margin: auto;
   position: relative;
   background: var(--bg);
   max-width: 800px;
@@ -258,6 +265,10 @@ header nav a.active::after {
     font-weight: bolder;
 }
 
+.hero-title p{
+    font-size: 27px;
+}
+
 .hero-btns{
     margin-top: 20px;
     display: flex;
@@ -288,19 +299,6 @@ header nav a.active::after {
   background-color: rgba(243, 243, 247);
 }
 
-.info-box {
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.info-box:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-}
-
 .fast-info p {
   color: #6B7280;
   font-size: 14px;
@@ -327,31 +325,18 @@ header nav a.active::after {
   border-bottom: 2px solid var(--border);
 }
 
-.features .info-box {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  cursor: pointer;
+.features-card{
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  transition: 0.2s ease;
 }
 
-.features .info-box h3 {
-  position: relative;
-  padding-bottom: 10px;
-  margin-bottom: 10px;
-}
-
-.features .info-box h3::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 1px;
-  background: var(--border);
+.features-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
 .features h3 {
-  font-size: 16px;
+  font-size: 24px;
   color: #111827;
 }
 
@@ -359,14 +344,6 @@ header nav a.active::after {
   font-size: 14px;
   color: #6B7280;
 }
-
-/* іконки */
-.features svg {
-  width: 30px;
-  height: 30px;
-  color: #9CA3AF;
-}
-
 
 /* ===================== */
 /* APPLICATION */
@@ -426,33 +403,14 @@ header nav a.active::after {
   color: #111827;
 }
 
-.last-news .container {
-  flex-direction: column;
+.last-news-title{
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.last-news .info-box {
-  margin-top: 10px;
-}
-
-/* якщо хочеш 3 колонки */
-.last-news .container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
 
 /* карточка новини */
-
-.last-news .info-box h3 {
-  font-size: 16px;
-  margin-bottom: 10px;
-}
-
-.last-news .info-box p {
-  font-size: 14px;
-  color: #6B7280;
-  margin-bottom: 10px;
-}
 
 .last-news a {
   color: #3B82F6;
@@ -462,6 +420,16 @@ header nav a.active::after {
 
 .last-news a:hover {
   text-decoration: underline;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.news-grid .card{
+  max-width: 350px;
 }
 
 /* ABOUT PAGE */
@@ -549,18 +517,18 @@ header nav a.active::after {
   align-items: center;
 }
 
-.stat-box {
-  border-left: 2px solid var(--border);
-  padding-left: 10px;
+.stat-card{
+  transform: none;
+  transition: none;
 }
 
-.stat-box p {
+.stats .card p {
   font-size: 13px;
   margin-bottom: 5px;
   font-weight: 500;
 }
 
-.stat-box span {
+.stats .card span {
   font-size: 22px;
   font-weight: 600;
   color: var(--text-main);
@@ -642,8 +610,7 @@ header nav a.active::after {
 }
 
 .citizen-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transform: translateY(-3px) scale(1.01);
 }
 
 
