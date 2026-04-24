@@ -449,6 +449,12 @@ header nav a.active::after {
   border-radius: 7px;
 }
 
+.history-title, .principles-title{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .container-symbols{
   display: flex;
   flex-direction: column;
@@ -461,6 +467,17 @@ header nav a.active::after {
   align-items: center;
 }
 
+.symbols-head button{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.symbols-head button:hover{
+  border: 1px solid var(--primary);
+  color: var(--primary);
+}
+
 .symbols-main{
   display: flex;
   align-items: center;
@@ -468,14 +485,21 @@ header nav a.active::after {
   padding: 20px 0;
 }
 
-.emblem{
+.emblem, .flag{
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.symbol-content{
+  border-left: 3px solid var(--border);
   padding-left: 20px;
-  border-left: 2px solid var(--border);
 }
 
 .slogan{
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: 10px 0;
   border: 1px solid var(--border);
   border-radius: 5px;
@@ -703,6 +727,7 @@ header nav a.active::after {
 
 .contents-section h3 {
   margin-bottom: 15px;
+  gap: 20px;
 }
 
 /* GRID 2x3 */
@@ -737,6 +762,7 @@ header nav a.active::after {
 /* hover */
 .content-item:hover{
   border-color: var(--primary);
+  background: rgba(59, 130, 246, 0.1);
   transform: translateY(-2px);
 }
 
@@ -747,7 +773,7 @@ header nav a.active::after {
 
 /* active */
 .content-item.active {
-  background: var(--primary);
+  background: rgba(59, 130, 246, 0.1);
   color: white;
   border-color: var(--primary);
 }
@@ -806,4 +832,10 @@ header nav a.active::after {
   display: flex;
   flex-direction: column;
   gap: 15px;
+}
+
+.attention-info{
+  justify-content: flex-start;
+  gap: 20px;
+  padding-left: 30px;
 }
