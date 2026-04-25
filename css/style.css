@@ -774,7 +774,6 @@ header nav a.active::after {
 /* active */
 .content-item.active {
   background: rgba(59, 130, 246, 0.1);
-  color: white;
   border-color: var(--primary);
 }
 
