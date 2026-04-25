@@ -6,13 +6,13 @@ export function createCitizenCard(citizen) {
     <div class="avatar">${citizen.name[0]}</div>
     <div>
       <h3>${citizen.name}</h3>
-      <p>ID: #${citizen.id}</p>
+      <p>ID: #${citizen.isActive}</p>
     </div>
   </div>
 
   <div class="citizen-right">
-    <span class="role ${citizen.role.toLowerCase()}">${c.role}</span>
-    <p>${citizen.year}</p>
+    <span class="role ${citizen.role.roleName.toLowerCase()}">${citizen.role.roleName}</span>
+    <p>${citizen.join_year}</p>
   </div>
 
 </div>
