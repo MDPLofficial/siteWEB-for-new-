@@ -19,6 +19,9 @@
 }
 
 body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Takes full viewport height */
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
@@ -30,6 +33,7 @@ body{
 
 main{
   background-color: var(--bg-secondary);
+  flex: 1;
 }
 
 section {
@@ -240,6 +244,17 @@ header nav a.active::after {
   background: #2563EB;
 }
 
+footer .container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-left nav{
+  display: flex;
+  gap: 50px;
+}
+
 /* PAGE HOME */
 /* HERO */
 
@@ -287,30 +302,6 @@ header nav a.active::after {
     color: #FFFFFF;
 }
 
-/* ===================== */
-/* FAST INFO (СТАТИСТИКА) */
-/* ===================== */
-
-.fast-info {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  padding: 30px 60px;
-  background-color: rgba(243, 243, 247);
-}
-
-.fast-info p {
-  color: #6B7280;
-  font-size: 14px;
-}
-
-.fast-info strong {
-  display: block;
-  font-size: 28px;
-  color: #111827;
-  margin-top: 5px;
-}
-
 
 /* ===================== */
 /* FEATURES (КАРТОЧКИ) */
@@ -326,8 +317,14 @@ header nav a.active::after {
 }
 
 .features-card{
+  position: relative;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
   transition: 0.2s ease;
+  overflow: hidden;
+}
+
+.card-main{
+  z-index: 2;
 }
 
 .features-card:hover {
@@ -343,6 +340,22 @@ header nav a.active::after {
 .features p {
   font-size: 14px;
   color: #6B7280;
+}
+
+.card-hidden{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 0;
+  background: var(--bg);
+
+  transform: translateY(100%);
+  transition: all 0.3s ease;
+}
+
+.features-card:hover .card-hidden{
+  transform: translateY(0);
 }
 
 /* ===================== */
