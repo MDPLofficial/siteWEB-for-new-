@@ -1,7 +1,6 @@
 const WEBHOOK_URL = "https://discord.com/api/webhooks/1500347036753723463/M6LLbIDQehv-22pvdimgs5FTJBmqW9vbnw33la7mL2sR9gW4gyAc2t5OfVJilHTXb2f0";
 
 let modal = document.querySelector(".backdrop");
-const applicationForm = document.querySelector(".blank");
 
 export function initModal() {
   document.addEventListener("click", (e) => {
@@ -9,22 +8,9 @@ export function initModal() {
       modal = createModal();
     }
 
-    if (e.target.closest(".become-citizen-btn")) {
-      showModal();
-    }
+    const applicationForm = document.querySelector(".blank");
 
-    if (e.target.closest(".close-btn")) {
-      hideModal();
-    }
-  });
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      hideModal();
-    }
-  });
-
-  applicationForm.addEventListener('submit', (e) => {
+    applicationForm.addEventListener('submit', (e) => {
       e.preventDefault();
 
       let name = applicationForm.elements.name.value;
@@ -64,6 +50,21 @@ export function initModal() {
       applicationForm.reset();
       hideModal();
     });
+
+    if (e.target.closest(".become-citizen-btn")) {
+      showModal();
+    }
+
+    if (e.target.closest(".close-btn")) {
+      hideModal();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      hideModal();
+    }
+  });
 }
 
 function fetchCitizen(name, date, reason, projects, poste){

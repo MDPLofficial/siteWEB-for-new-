@@ -210,16 +210,16 @@ header{
     border-bottom: 2px solid var(--border);
 }
 
-header nav{
-    display: flex;
-    gap: 50px;
+.desktop-nav{
+  display: flex;
+  gap: 50px;
 }
 
-header nav a {
+.desktop-nav a {
   position: relative;
 }
 
-header nav a::after {
+.desktop-nav a::after {
   content: "";
   position: absolute;
   left: 0;
@@ -230,8 +230,8 @@ header nav a::after {
   transition: width 0.2s ease;
 }
 
-header nav a:hover::after,
-header nav a.active::after {
+.desktop-nav a:hover::after,
+.desktop-nav a.active::after {
   width: 100%;
 }
 
@@ -247,6 +247,88 @@ header nav a.active::after {
 
 .become-citizen-btn:hover {
   background: #2563EB;
+}
+
+.burger-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+
+/* ====================== */
+/* MOBILE MENU */
+/* ====================== */
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+
+  background: var(--bg);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition: all 0.3s ease;
+}
+
+
+/* OPEN */
+
+.mobile-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+
+/* ====================== */
+/* CLOSE BUTTON */
+/* ====================== */
+
+.close-mobile-btn {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+
+  border: none;
+  background: transparent;
+
+  font-size: 32px;
+  cursor: pointer;
+}
+
+
+/* ====================== */
+/* MOBILE NAV */
+/* ====================== */
+
+.mobile-nav {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 40px;
+}
+
+
+.mobile-nav a {
+  font-size: 28px;
+  font-weight: 600;
+
+  transition: 0.2s ease;
+}
+
+
+.mobile-nav a:hover {
+  color: var(--primary);
+  transform: translateY(-2px);
 }
 
 footer .container{
@@ -862,8 +944,13 @@ footer .container{
 /* ================== */
 
 @media screen and (max-width: 1024px) {
-  header nav, header button{
+  .desktop-nav,
+  .become-citizen-btn {
     display: none;
+  }
+
+  .burger-btn {
+    display: block;
   }
 
   /* HOME PAGE */
