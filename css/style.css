@@ -945,7 +945,7 @@ footer .container{
 
 @media screen and (max-width: 1024px) {
   .desktop-nav,
-  .become-citizen-btn {
+  header .become-citizen-btn {
     display: none;
   }
 
