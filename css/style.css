@@ -10,7 +10,7 @@
   --text-secondary: #6B7280;
   --font-bold: 700;
 
-  --shadow-lg: 0 10px 25px rgba(0,0,0, 0.20);
+  --shadow-lg: 0 4px 12px rgba(0,0,0,0.08);
 
   --success: #10B981;
   --error: #EF4444;
@@ -99,6 +99,7 @@ a{
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+  backdrop-filter: blur(10px);
 
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -161,6 +162,10 @@ a{
   background-color: #0000000d;
   width: 100%;
   margin-bottom: 24px;
+}
+
+.contact-modal-form.error {
+  border: 2px solid red;
 }
 
 .modal-btns{
@@ -253,6 +258,7 @@ footer .container{
 .footer-left nav{
   display: flex;
   gap: 50px;
+  flex-wrap: wrap;
 }
 
 /* PAGE HOME */
@@ -441,10 +447,6 @@ footer .container{
   gap: 20px;
 }
 
-.news-grid .card{
-  max-width: 350px;
-}
-
 /* ABOUT PAGE */
 
 .about-info{
@@ -520,7 +522,6 @@ footer .container{
   padding: 10px 0;
   border: 1px solid var(--border);
   border-radius: 5px;
-  width: 100%;
   background: var(--bg);
   box-shadow: 0 5px 15px rgba(0,0,0, 0.20);
   background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(241, 245, 254, 1) 38%);
@@ -854,4 +855,99 @@ footer .container{
   justify-content: flex-start;
   gap: 20px;
   padding-left: 30px;
+}
+
+/* ================== */
+/* MOBILE */
+/* ================== */
+
+@media screen and (max-width: 1024px) {
+  header nav, header button{
+    display: none;
+  }
+
+  /* HOME PAGE */
+
+  .hero-btns{
+    flex-direction: column;
+  }
+
+  .features {
+    grid-template-columns: repeat(2, 2fr);
+  }
+
+  .steps-list {
+    list-style: none;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .application li {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--bg);
+    box-shadow: var(--shadow-lg);
+  }
+
+  /* стрілочки */
+  .application li::after {
+    content: "";
+  }
+
+  .news-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* ABOUT PAGE */
+
+  .about-info{
+    flex-direction: column;
+  }
+
+  .symbols-main{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px 0;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* CITIZENS PAGE */
+
+  .stats {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  #search {
+    width: 100%;
+  }
+
+  /* CONSTITUTION PAGE */
+
+  .contents {
+    display: grid;
+    grid-template-columns: repeat(2, 3fr);
+    gap: 15px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .features {
+    grid-template-columns: repeat(1, 4fr);
+  }
+
+  footer .container{
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .contents {
+    display: flex;
+    flex-direction: column;
+  }
 }
